@@ -13,6 +13,10 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
+plugins {
+    id 'com.google.cloud.tools.jib' version '0.10.0'
+}
+
 bootJar {
     baseName = 'gs-rest-service'
     version =  '0.1.0'
@@ -31,4 +35,11 @@ dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-consul-discovery:2.0.1.RELEASE')
     compile("com.h2database:h2")
     testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+jib {
+    to {
+        image = "recommendation-app:0.0.1-SNAPSHOT"
+    }
+    allowInsecureRegistries = true
 }
