@@ -20,7 +20,6 @@ public class SlopeOneTest {
 
         HashMap<Item, Float> kakoPhonixPreferences = new HashMap<>();
         kakoPhonixPreferences.put(new Item("Toverdrank"), 4.5f);
-        kakoPhonixPreferences.put(new Item("Romeinen"), 1.7f);
 
         Map<Item, Float> predict = slopeOne.predict(kakoPhonixPreferences);
         System.out.println(predict);
@@ -58,7 +57,7 @@ public class SlopeOneTest {
         panoramixPreferences.put(new Item("Toverdrank"), 4.2f);
         panoramixPreferences.put(new Item("Romeinen"), 2.2f);
         panoramixPreferences.put(new Item("Everzwijnen"), 4.1f);
-        userMap.put(new User("Idefix"), panoramixPreferences);
+        userMap.put(new User("Panoramix"), panoramixPreferences);
 
         return userMap;
     }

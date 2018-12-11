@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: recommendation
+  cloud:
+    consul:
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}
+        healthCheckPath: /health-check
+        healthCheckInterval: 20s
+server:
+  port: 8081
